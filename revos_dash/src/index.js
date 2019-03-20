@@ -14,10 +14,10 @@ const routing = (
   <div>
   <App/>
     <Route exact path="/" component={Home} />
-    <Route path="/home" component={Home} />
-    <Route path="/map" component={Map} />
-    <Route path="/table" component={Table}/>
-    <Route path="/stationTable" component={StationTable}/>
+    <Route exact path="/home" component={Home} />
+    <Route exact path="/map" component={Map} />
+    <Route exact path="/table" component={Table}/>
+    <Route exact path="/stationTable" component={StationTable}/>
   </div>
 </Router>
 );

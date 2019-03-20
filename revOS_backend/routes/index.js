@@ -41,7 +41,6 @@ router.get('/loadcsv', function(req, res, next){
               gender: parseInt(data.h14, 10)
             });
             bikes.push(bike);
-            console.log(bike.tripduration);
         }
         catch(err) {
             //error handler
@@ -115,7 +114,6 @@ router.get('/getStations', function(req, res, next){
 
 
 router.post('/getStationDetails', function(req, res, next){
-  console.log(req.body);
   if(!req.body.stationID){
     res.status(500).json({
         error: "No StationID Given",

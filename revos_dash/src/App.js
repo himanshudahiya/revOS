@@ -27,7 +27,6 @@ class Header extends Component {
       });
     }
     render() {
-      console.log(window.location);
       return (
         <div>
           <Navbar color="light" light expand="md">

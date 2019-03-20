@@ -14,6 +14,7 @@ class Home extends Component{
     };
   }
   componentDidMount() {
+    localStorage.clear();
       fetch(global.server+"getData", {
         method: 'GET',
         headers: {
@@ -27,7 +28,6 @@ class Home extends Component{
         .then(response => response.json())
         .then(
           (result) => {
-            console.log(result.bike_details);
             this.setState({
               isLoaded: true,
               bikesData: result.bike_details

@@ -80,7 +80,6 @@ class StationTable extends Component {
 
   }
   updateStationID = (e)=>{
-    console.log(e.target.value);
     this.setState({
       stationID: e.target.value,
     });
@@ -111,7 +110,7 @@ class StationTable extends Component {
                   <Col >
                     <DatePicker
                       showTime
-                      value={Moment(this.state.startDate)}
+                      value={(this.state.startDate==0)? (Moment(this.state.startDate)) : ('')}
                       placeholder="Start Date and Time"
                       selected={this.state.startDate}
                       onChange={this.updateStartDate.bind(this)}
@@ -124,7 +123,7 @@ class StationTable extends Component {
                 <Col >
                   <DatePicker
                     showTime
-                    value={Moment(this.state.stopDate)}
+                    value={(this.state.stopDate==0)? (Moment(this.state.stopDate)) : ('')}
                     placeholder="End Date and Time"
                     selected={this.state.stopDate}
                     onChange={this.updateStopDate.bind(this)}

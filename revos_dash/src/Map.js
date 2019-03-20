@@ -9,6 +9,7 @@ import { Button} from 'reactstrap';
 import ReactDOM from 'react-dom';
 import { Spin } from 'antd';
 import './config.js'
+import { BrowserRouter, Route, NavLink, Router } from "react-router-dom";
 
 
 export class InfoWindowEx extends Component {
@@ -91,22 +92,18 @@ class MapContainer extends Component{
                 bikesCount: result.count,
               });
               if(isAllData==true){
-                localStorage.removeItem("bikesData");
-                localStorage.removeItem("stationID");
-                localStorage.removeItem("startDate");
-                localStorage.removeItem("stopDate");
+                const { detect } = require('detect-browser');
+                const browser = detect();
+                localStorage.clear();
                 localStorage.setItem("stationID", stationID);
                 localStorage.setItem("startDate", this.state.startDate);
                 localStorage.setItem("stopDate", this.state.stopDate);
                 localStorage.setItem("bikesData", JSON.stringify(result.bikes));
-
-                const { detect } = require('detect-browser');
-                const browser = detect();
                 if(browser.name=='safari'){
                   window.location.assign('/stationTable');
                 }
                 else{
-                  window.open('/stationTable', '_blank');
+                  var stationDetailsTable = window.open('/stationTable', '_blank');
                 }
               }
             return "success";
@@ -154,6 +151,7 @@ class MapContainer extends Component{
     }
 
   componentDidMount() {
+    localStorage.clear();
       fetch("http://127.0.0.1:3000/home/getStations", {
         method: 'GET',
         headers: {
@@ -267,7 +265,6 @@ class MapContainer extends Component{
                       ) : <p />
                       }
                       <Button type="primary" id={this.state.selectedPlace._id} alldata="true" onClick={() =>this.getBikesData(this.state.selectedPlace.id, true)}>Show All Bikes</Button>
-
                     </div>
                 </InfoWindowEx>
 
