@@ -1,0 +1,26 @@
+revOS_backend/.DS_Store
+revOS_backend/data/*
+revOS_backend/node_modules/*
+revOS_backend/package-lock.json
+
+revos_dash/node_modules/*
+
+revos_dash/.pnp
+revos_dash/.pnp.js
+
+# testing
+revos_dash/coverage
+
+# production
+revos_dash/build
+
+# misc
+revos_dash/.DS_Store
+revos_dash/.env.local
+revos_dash/.env.development.local
+revos_dash/.env.test.local
+revos_dash/.env.production.local
+
+revos_dash/npm-debug.log*
+revos_dash/yarn-debug.log*
+revos_dash/yarn-error.log*
