@@ -144,3 +144,7 @@ Frontend contains 3 different tabs on nav bar.
         1. Home - Displays all the data in a table use 2nd API.
         2. Map - Displays stations on map as markers using 3rd API. When click on marker, will give its details, like Station Name, total bikes using that station(if time interval specified), and station position. Also gives a button using which we can navigate to different page to check all the bikes details.
         3. Station Table - Displays the details of all the bikes using a given particular station in a given time interval. 
+
+
+## Authors
+**Himanshu Dahiya** 
